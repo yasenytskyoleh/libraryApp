@@ -1,11 +1,21 @@
 doctype html
-html(lang='en')
+html(lang='en', ng-app="libraryApp")
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    script(src='vendors/js/angular.js')
+    script(src="js/app.js")
+    link(rel='stylesheet', href='vendors/css/bootstrap.css')
+    link(rel='stylesheet', href='vendors/css/font-awesome.min.css')
     link(rel='stylesheet', href='css/style.css')
     title Index page one
   body
-  h1 The core project
+  div.container(ng-controller="libraryCtrl")
+    h1 Online library
+    button(ng-click="editOrCreate()") Add author
+    h2 List authors
+    ng-include(src="'views/table.html'", ng-show="currentView == 'table'")
+    ng-include(src="'views/edit.html'", ng-show="currentView == 'edit'")
+    ng-include(src="'views/books.html'", ng-show="currentView == 'books'")
   script(src='js/test.js')

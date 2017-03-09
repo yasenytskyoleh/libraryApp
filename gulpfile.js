@@ -2,7 +2,7 @@ var gulp          = require('gulp'),
     pug           = require('gulp-pug2'),
     stylus        = require('gulp-stylus'),
     autoprefixer  = require('gulp-autoprefixer'),
-    gutil         = require('gulp-util'),
+    util         = require('gulp-util'),
     browserSync   = require('browser-sync').create(),
     concat        = require('gulp-concat'),
     concatCss     = require('gulp-concat-css'),
@@ -20,6 +20,15 @@ gulp.task('pug', function(){
             stream: true
         }))
 });
+
+gulp.task('views', function () {
+    return gulp.src('app/views-pug/**/*.pug')
+        .pipe(pug({pretty: true}))
+        .pipe(gulp.dest('app/views/'))
+        .pipe(browserSync.reload({
+                stream: true
+            }))
+})
 
 gulp.task('stylus', function () {
     return gulp.src('app/stylus/**/*.styl')
@@ -39,9 +48,10 @@ gulp.task('autoprefixer', function() {
         .pipe(gulp.dest('app/css/'))
 });
 
-gulp.task('watch', ['browserSync', 'pug', 'stylus', 'autoprefixer'],function(){
+gulp.task('watch', ['browserSync', 'pug', 'stylus', 'autoprefixer', 'views'],function(){
     gulp.watch('app/pug/**/*.pug', ['pug'])
     gulp.watch('app/pug-fragments/**/*.pug', ['pug'])
+    gulp.watch('app/views-pug/**/*.pug', ['views'])
     gulp.watch('app/stylus/**/*.styl', ['stylus'])
     gulp.watch('app/stylus-mixins/**/*.styl', ['stylus'])
     gulp.watch('app/css/**/*.css', ['autoprefixer'])

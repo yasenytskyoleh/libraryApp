@@ -1,0 +1,28 @@
+
+<div class="panel-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Author name</th>
+        <th>BirthDate</th>
+        <th>&nbsp</th>
+        <th>&nbsp</th>
+        <th>Books</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in authors">
+        <td>{{item.name}} {{item.patronymic}} {{item.surname}}</td>
+        <td>{{item.birthdate | date :"dd.MM.y"}}</td>
+        <td>
+          <button><i class="fa fa-pencil-square-o fa-100px" aria-hidden="true" ng-click="editOrCreate(item)"></i></button>
+        </td>
+        <td>
+          <button><i class="fa fa-times fa-100px" ng-click="delete(item)"></i></button>
+        </td>
+        <td><a ng-click="allBooks(item.books)">See all books</a></td>
+        <td hidden="hidden">{{item.books}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

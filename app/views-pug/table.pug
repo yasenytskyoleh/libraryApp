@@ -1,0 +1,25 @@
+div.panel-body
+    table.table
+        thead
+            tr
+                th Author name
+                th BirthDate
+                th &nbsp
+                th &nbsp
+                th Books
+        tbody
+            tr(ng-repeat='item in authors')
+                td {{item.name}} {{item.patronymic}} {{item.surname}}
+                td {{item.birthdate | date :"dd.MM.y"}}
+                td
+                    button
+                        i.fa.fa-pencil-square-o.fa-100px(aria-hidden="true", ng-click="editOrCreate(item)")
+                td
+                    button
+                        i.fa.fa-times.fa-100px(ng-click="delete(item)")
+                td
+                    a(ng-click="allBooks(item.books)") See all books
+                td(hidden) {{item.books}}
+
+
+

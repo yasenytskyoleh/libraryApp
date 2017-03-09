@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="libraryApp">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="vendors/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Index page one</title>
   </head>
   <body></body>
-  <h1>The core project</h1>
+  <div class="container" ng-controller="libraryCtrl">
+    <h1>Online library</h1>
+    <button ng-click="editOrCreate()">Add author</button>
+    <h2>List authors</h2>
+    <ng-include src="'views/table.html'" ng-show="currentView == 'table'"></ng-include>
+    <ng-include src="'views/edit.html'" ng-show="currentView == 'edit'"></ng-include>
+    <ng-include src="'views/books.html'" ng-show="currentView == 'books'"></ng-include>
+  </div>
   <script src="js/test.js"></script>
 </html>

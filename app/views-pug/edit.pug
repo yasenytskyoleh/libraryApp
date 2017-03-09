@@ -1,0 +1,17 @@
+div.panel-body
+    div.form-group
+        label Name:
+        input.form-control(ng-model="currentItem.name")
+    div.form-group
+        label Surname:
+        input.form-control(ng-model="currentItem.surname")
+    div.form-group
+        label Patronymic:
+        input.form-control(ng-model="currentItem.patronymic")
+    div.form-group
+        label Birth Date:
+        input.form-control(ng-model="currentItem.birthdate")
+    div
+        button(ng-click="save(currentItem)") Save &nbsp
+            i.fa.fa-floppy-o.fa-100px
+        button(ng-click="cancel()") Cancel
