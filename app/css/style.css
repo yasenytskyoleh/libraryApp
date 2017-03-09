@@ -4,31 +4,3 @@
   font-weight: 600;
   font-style: normal;
 }
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#ff0));
-  background: -webkit-linear-gradient(#f00, #ff0);
-  background: linear-gradient(#f00, #ff0);
-}
-body h1 {
-  font: 1em 'Asap-Regular',Arial, sans-serif;
-  color: #ff0;
-  text-transform: uppercase;
-}
-body {
-  background-color: rgba(255,0,0,0.4);
-}
-.flex-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 400px;
-  height: 250px;
-  background-color: #d3d3d3;
-}
-.flex-item {
-  background-color: #000;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-}
