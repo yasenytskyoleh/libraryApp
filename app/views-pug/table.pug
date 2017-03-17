@@ -1,15 +1,22 @@
 div.panel-body
+    h2 List authors
+    div
+        button(ng-click="editOrCreate()") Add author
+        div.form-group
+            input(ng-model="searchString")
+            button(ng-click="search(searchString)") Search
     table.table
         thead
             tr
-                th Author name
+                th
+                    a(ng-click="sort(sortValue)") Author name
                 th BirthDate
-                th &nbsp
-                th &nbsp
-                th Books
+                th Edit
+                th Delete
         tbody
-            tr(ng-repeat='item in authors')
-                td {{item.name}} {{item.patronymic}} {{item.surname}}
+            tr(ng-repeat='item in authors | orderBy: sortValue')
+                td
+                    a(ng-click="allBooks(item)") {{item.surname}} {{item.name}} {{item.patronymic}}
                 td {{item.birthdate | date :"dd.MM.y"}}
                 td
                     button
@@ -17,8 +24,6 @@ div.panel-body
                 td
                     button
                         i.fa.fa-times.fa-100px(ng-click="delete(item)")
-                td
-                    a(ng-click="allBooks(item.books)") See all books
                 td(hidden) {{item.books}}
 
 

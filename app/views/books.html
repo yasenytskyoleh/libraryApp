@@ -1,8 +1,30 @@
 
 <div class="panel-body">
+  <h2>List books {{currentAuthor.surname}} {{currentAuthor.name}} {{currentAuthor.patronymic}}</h2>
+  <button ng-click="createBook()">Add books</button>
+  <button ng-click="back()">Back</button>
   <table class="table">
-    <tr ng-repeat="book in currentAuthor">
-      <td>{{book.name}}</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Book name</th>
+        <th>Genre</th>
+        <th>Number of pages</th>
+        <th>Edit book</th>
+        <th>Delete book</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="book in currentAuthor.books">
+        <td>{{book.name}}</td>
+        <td>{{book.genre}}</td>
+        <td>{{book.numberPages}}</td>
+        <td>
+          <button><i class="fa fa-pencil-square-o fa-100px" aria-hidden="true" ng-click="editBook(book)"></i></button>
+        </td>
+        <td>
+          <button><i class="fa fa-times fa-100px" aria-hidden="true" ng-click="delBook(currentAuthor,book)"></i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>

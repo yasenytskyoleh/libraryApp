@@ -1,12 +1,12 @@
 
 <div class="panel-body">
   <div class="form-group">
-    <label>Name:</label>
-    <input class="form-control" ng-model="currentItem.name"/>
-  </div>
-  <div class="form-group">
     <label>Surname:</label>
     <input class="form-control" ng-model="currentItem.surname"/>
+  </div>
+  <div class="form-group">
+    <label>Name:</label>
+    <input class="form-control" ng-model="currentItem.name"/>
   </div>
   <div class="form-group">
     <label>Patronymic:</label>
@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     <label>Birth Date:</label>
-    <input class="form-control" ng-model="currentItem.birthdate"/>
+    <input class="form-control" type="date" ng-model="currentItem.birthdate"/>
   </div>
   <div>
     <button ng-click="save(currentItem)">Save &nbsp<i class="fa fa-floppy-o fa-100px"></i></button>

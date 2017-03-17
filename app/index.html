@@ -14,11 +14,10 @@
   <body></body>
   <div class="container" ng-controller="libraryCtrl">
     <h1>Online library</h1>
-    <button ng-click="editOrCreate()">Add author</button>
-    <h2>List authors</h2>
     <ng-include src="'views/table.html'" ng-show="currentView == 'table'"></ng-include>
     <ng-include src="'views/edit.html'" ng-show="currentView == 'edit'"></ng-include>
     <ng-include src="'views/books.html'" ng-show="currentView == 'books'"></ng-include>
+    <ng-include src="'views/editBook.html'" ng-show="currentView == 'editBook'"></ng-include>
   </div>
   <script src="js/test.js"></script>
 </html>
