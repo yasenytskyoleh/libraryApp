@@ -11,6 +11,9 @@ div.panel-body
     div.form-group
         label Birth Date:
         input.form-control(type="date" ng-model="currentItem.birthdate")
+    div.form-group
+        label Death Date:
+        input.form-control(type="date" ng-model="currentItem.deathdate")
     div
         button(ng-click="save(currentItem)") Save &nbsp
             i.fa.fa-floppy-o.fa-100px

@@ -33,13 +33,21 @@
 			"id": "birthdate",
 			"order": 3
 		},
+		"deathdate": {
+			"name": "deathdate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "deathdate",
+			"order": 4
+		},
 		"books": {
 			"name": "books",
 			"type": "array",
 			"typeLabel": "array",
 			"required": false,
 			"id": "books",
-			"order": 4
+			"order": 5
 		}
 	}
 }

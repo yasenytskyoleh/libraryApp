@@ -1,0 +1,24 @@
+
+<div class="panel-body">
+  <h2>List authors</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><a ng-click="sort(sortValue)">Author name</a></th>
+        <th>BirthDate</th>
+        <th>Book name</th>
+        <th>Genre</th>
+        <th>Number of pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in findBooks">
+        <td><a ng-click="chooseAuthor(item.id)">{{item.surname}} {{item.name}} {{item.patronymic}}</a></td>
+        <td>{{item.birthdate | date :"dd.MM.y"}}</td>
+        <td>{{item.bookName}}</td>
+        <td>{{item.genre}}</td>
+        <td>{{item.numberPages}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

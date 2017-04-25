@@ -4,20 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="vendors/js/angular.js"></script>
-    <script src="js/app.js"></script>
     <link rel="stylesheet" href="vendors/css/bootstrap.css">
     <link rel="stylesheet" href="vendors/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Index page one</title>
+    <title>Library App</title>
   </head>
-  <body></body>
-  <div class="container" ng-controller="libraryCtrl">
-    <h1>Online library</h1>
-    <ng-include src="'views/table.html'" ng-show="currentView == 'table'"></ng-include>
-    <ng-include src="'views/edit.html'" ng-show="currentView == 'edit'"></ng-include>
-    <ng-include src="'views/books.html'" ng-show="currentView == 'books'"></ng-include>
-    <ng-include src="'views/editBook.html'" ng-show="currentView == 'editBook'"></ng-include>
-  </div>
-  <script src="js/test.js"></script>
+  <body>
+    <div class="controller" ng-controller="libraryCtrl">
+      <section class="b-home container"><a name="home"></a>
+        <div class="row">
+          <div class="header b-header col-xs-12 col-sm-12">
+            <div class="container">
+              <div class="row">
+                <div class="b-logo col-xs-12 col-sm-4"><a class="b-logo__a" href="index.html"><img class="b-logo__img img-responsive" src="images/logo.png" alt="online library"></a></div>
+                <div class="b-menu col-sm-8">
+                  <div class="nav dropdown">
+                    <div class="b-nav-menu__list dropdown-content"><a class="b-nav-menu__item" href="#home">home</a><a class="b-nav-menu__item" href="#library">library</a><a class="b-nav-menu__item" href="#ourBlog">our blog</a><a class="b-nav-menu__item" href="#aboutUS">about us</a><a class="b-nav-menu__item" href="#contact">contact us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="b-center-text">
+                  <h1 class="b-center-text__h1">book library</h1>
+                  <h2 class="b-center-text__h2">list of author update every day</h2>
+                  <p class="b-center-text__p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.</p>
+                  <div class="b-search form-group">
+                    <input class="b-search__input" ng-model="string" placeholder="Enter title book" required><a href="#library">
+                      <button class="b-search__btn" ng-click="search(string)" title="search"><i class="fa fa-search fa-lg"></i></button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel slide" id="slider" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="item active"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </div>
+      </section><a name="library"></a>
+      <section>
+        <ng-include src="'views/table.html'" ng-show="currentView == 'table'"></ng-include>
+        <ng-include src="'views/edit.html'" ng-show="currentView == 'edit'"></ng-include>
+        <ng-include src="'views/books.html'" ng-show="currentView == 'books'"></ng-include>
+        <ng-include src="'views/editBook.html'" ng-show="currentView == 'editBook'"></ng-include>
+        <ng-include src="'views/search.html'" ng-show="currentView == 'search'"></ng-include>
+      </section>
+      <section class="b-guide">
+        <div class="container">
+          <h2 class="b-guide__h2">online library guide</h2>
+          <hr class="b-guide__hr">
+          <hr class="b-guide__hr">
+          <h4 class="b-guide__h4">Online library guide is the biggest books library in the world that has alot of the popular books presented here. Top Authors are here just subscribe your email address and get updated with us.</h4>
+          <div class="row">
+            <div class="b-cards">
+              <div class="b-gift col-xs-6 col-md-3">
+                <div class="b-card">
+                  <div class="b-card__icon"><i class="fa fa-gift"></i></div>
+                  <h3 class="b-card__h3">Free Gift Wrap</h3>
+                  <hr class="b-card__hr">
+                  <hr class="b-card__hr">
+                  <p>Free gift wrapping on all purchases. Wrapping includes a blue box with your choice with Ribbon.</p>
+                </div>
+              </div>
+              <div class="b-selling col-xs-6 col-md-3">
+                <div class="b-card">
+                  <div class="b-card__icon"><i class="fa fa-book"></i></div>
+                  <h3 class="b-card__h3">Order books</h3>
+                  <hr class="b-card__hr">
+                  <hr class="b-card__hr">
+                  <p>We provide you the best selling of the used books. You can sell them to us if you have read them once.</p>
+                </div>
+              </div>
+              <div class="b-shipping col-xs-6 col-md-3">
+                <div class="b-card">
+                  <div class="b-card__icon"><i class="fa fa-truck"></i></div>
+                  <h3 class="b-card__h3">Free Shipping</h3>
+                  <hr class="b-card__hr">
+                  <hr class="b-card__hr">
+                  <p>We provide free shipping over the $1000 purchase from one country to another with extra discount</p>
+                </div>
+              </div>
+              <div class="b-exchange col-xs-6 col-md-3">
+                <div class="b-card">
+                  <div class="b-card__icon"><i class="fa fa-money"></i></div>
+                  <h3 class="b-card__h3">Returns & Exchange</h3>
+                  <hr class="b-card__hr">
+                  <hr class="b-card__hr">
+                  <p>Return and Exchange is possible in 5 days. In case of lost or damage Return & Exchange is not possible.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="b-counts">
+        <div class="b-counts-row row">
+          <div class="b-count col-xs-offset-4 col-xs-2"><span class="startNum">0</span>
+            <p class="number">best authors</p>
+          </div>
+          <div class="b-count col-xs-2"><span class="startNum">0</span>
+            <p class="number">books to read</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="vendors/js/angular.js"></script>
+    <script src="vendors/js/jquery-3.1.1.min.js"></script>
+    <script src="vendors/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/library.js"></script>
+  </body>
 </html>

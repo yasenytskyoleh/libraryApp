@@ -4,17 +4,18 @@ html(lang='en', ng-app="libraryApp")
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    script(src='vendors/js/angular.js')
-    script(src="js/app.js")
     link(rel='stylesheet', href='vendors/css/bootstrap.css')
     link(rel='stylesheet', href='vendors/css/font-awesome.min.css')
     link(rel='stylesheet', href='css/style.css')
-    title Index page one
+    title Library App
   body
-  div.container(ng-controller="libraryCtrl")
-    h1 Online library
-    ng-include(src="'views/table.html'", ng-show="currentView == 'table'")
-    ng-include(src="'views/edit.html'", ng-show="currentView == 'edit'")
-    ng-include(src="'views/books.html'", ng-show="currentView == 'books'")
-    ng-include(src="'views/editBook.html'", ng-show="currentView == 'editBook'")
-  script(src='js/test.js')
+    div.controller(ng-controller="libraryCtrl")
+        include ../pug-fragments/home.pug
+        include ../pug-fragments/library.pug
+        include ../pug-fragments/guide.pug
+        include ../pug-fragments/counts.pug
+    script(src='vendors/js/angular.js')
+    script(src="vendors/js/jquery-3.1.1.min.js")
+    script(src="vendors/js/bootstrap.min.js")
+    script(src="js/app.js")
+    script(src="js/library.js")

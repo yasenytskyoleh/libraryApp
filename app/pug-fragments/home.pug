@@ -1,0 +1,29 @@
+section.b-home.container
+    a(name="home")
+    .row
+        .header.b-header.col-xs-12.col-sm-12
+            .container
+                .row
+                    .b-logo.col-xs-12.col-sm-4
+                        a.b-logo__a(href="index.html")
+                            img.b-logo__img.img-responsive(src="images/logo.png", alt="online library")
+                    .b-menu.col-sm-8
+                        .nav.dropdown
+                            .b-nav-menu__list.dropdown-content
+                                each item, $name in {'#home':'home', '#library':'library', '#ourBlog':'our blog', '#aboutUS':'about us', '#contact':'contact us'}
+                                    a.b-nav-menu__item(href=$name)=item
+                .row
+                    .b-center-text
+                        h1.b-center-text__h1 book library
+                        h2.b-center-text__h2 list of author update every day
+                        p.b-center-text__p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.
+                        .b-search.form-group
+                            input.b-search__input(ng-model="string", placeholder="Enter title book", required)
+                            a(href='#library')
+                                button.b-search__btn(ng-click="search(string)",title="search")
+                                    i.fa.fa-search.fa-lg
+    #slider.carousel.slide(data-ride="carousel")
+        .carousel-inner(role="listbox")
+            .item.active
+            .item
+            .item

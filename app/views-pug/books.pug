@@ -1,16 +1,16 @@
-div.panel-body
-    h2 List books {{currentAuthor.surname}} {{currentAuthor.name}} {{currentAuthor.patronymic}}
-    button(ng-click="createBook()") Add books
-    button(ng-click="back()") Back
-    table.table
-        thead
+.b-content.container.panel-body
+    h2.b-content__h2 List books {{currentAuthor.surname}} {{currentAuthor.name}} {{currentAuthor.patronymic}}
+    button.b-content__btn.btn-create(ng-click="createBook()") Add books
+    button.b-content__btn.btn-back(ng-click="back()") Back
+    table.b-content__table.table
+        thead.b-table__thead
             tr
                 th Book name
                 th Genre
                 th Number of pages
                 th Edit book
                 th Delete book
-        tbody
+        tbody.b-table__tbody
             tr(ng-repeat='book in currentAuthor.books')
                 td {{book.name}}
                 td {{book.genre}}
