@@ -1,7 +1,7 @@
-section.b-home.container
-    a(name="home")
+-var menu = [{'url' : '#home', 'text' : 'home'}, {'url' : '#library', 'text' : 'library'},{'url' : '#guide', 'text' : 'guide'}]
+section#home.b-home.container
     .row
-        .header.b-header.col-xs-12.col-sm-12
+        .header.b-header.col-xs-12
             .container
                 .row
                     .b-logo.col-xs-12.col-sm-4
@@ -10,8 +10,8 @@ section.b-home.container
                     .b-menu.col-sm-8
                         .nav.dropdown
                             .b-nav-menu__list.dropdown-content
-                                each item, $name in {'#home':'home', '#library':'library', '#ourBlog':'our blog', '#aboutUS':'about us', '#contact':'contact us'}
-                                    a.b-nav-menu__item(href=$name)=item
+                                each $link in menu
+                                    a.b-nav-menu__item(href=$link.url) !{$link.text}
                 .row
                     .b-center-text
                         h1.b-center-text__h1 book library

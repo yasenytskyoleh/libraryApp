@@ -223,10 +223,7 @@ button {
   text-transform: uppercase;
   text-align: center;
 }
-.b-info__h4 {
-  float: left;
-}
-.b-info__btn {
+.b-edit__btn {
   float: right;
   margin-right: 60px;
 }
@@ -282,21 +279,6 @@ button {
 .b-pages__a:hover {
   color: #00afef;
   border-bottom: 1px solid #00afef;
-}
-.b-counts {
-  width: 100%;
-  background-color: #00afef;
-}
-.b-count {
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-.b-count span {
-  font: 3em 'roboto-bold';
-}
-.b-counts-row {
-  margin: 0;
 }
 .b-guide {
   width: 100%;
@@ -359,4 +341,214 @@ button {
   height: 1px;
   width: 45px;
   margin: 5px auto;
+}
+.b-counts {
+  width: 100%;
+  background-color: #00afef;
+}
+.b-count {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+.b-count span {
+  font: 3em 'roboto-bold';
+}
+.b-counts-row {
+  margin: 0;
+}
+.b-gift {
+  width: 100%;
+  background: url("../images/laptop.png") no-repeat;
+  background-position: right bottom;
+  background-size: 50% auto;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+@media all and (max-width: 991px) {
+  .b-gift {
+    background: #f0f0f0;
+  }
+}
+.b-gift-card {
+  text-align: center;
+}
+.b-gift-card__h2 {
+  text-transform: uppercase;
+}
+.b-gift-card__hr {
+  background-color: #00afef;
+  height: 1px;
+  width: 60px;
+  margin: 5px auto;
+}
+.b-info {
+  margin: 0;
+  padding: 0;
+}
+.b-info-text {
+  border: 1px solid #cfcfcf;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 15px 0;
+  position: relative;
+}
+.b-info-text:hover {
+  background-color: #00afef;
+}
+.b-info-text:hover h3 {
+  background-color: #fff;
+}
+.b-info-text:hover h3 i {
+  color: #00afef;
+}
+.b-info-text:hover p {
+  color: #000;
+}
+.b-info-text__h3 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.b-info-text__h3 i {
+  float: left;
+  color: #000;
+  padding: 8px 15px;
+}
+.b-info-text__p {
+  padding: 10px;
+}
+.b-subscribe {
+  width: 100%;
+  background: url("../images/newsletter-bg.png") center bottom no-repeat, #00afef;
+}
+.b-letter {
+  padding: 0;
+  position: relative;
+}
+.b-letter > div {
+  margin: 15px 0;
+}
+.b-letter__h2 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+.b-letter__hr {
+  background-color: #fff;
+  height: 1px;
+  width: 60px;
+  margin: 5px auto;
+}
+.b-letter__p {
+  width: 85%;
+  margin: 20px auto;
+  color: #000;
+  text-align: center;
+}
+.b-subscription {
+  margin: 20px auto;
+  width: 430px;
+  height: 50px;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.b-subscription__input {
+  width: 330px;
+  height: 20px;
+  padding: 25px 10px;
+  float: left;
+  border: 0;
+  outline: 0;
+  background: rgba(0,0,0,0);
+}
+.b-subscription__input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.9);
+  font-style: italic;
+}
+.b-subscription__input::-moz-placeholder {
+  color: rgba(0,0,0,0.9);
+  font-style: italic;
+}
+.b-subscription__input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.9);
+  font-style: italic;
+}
+.b-subscription__input::placeholder {
+  color: rgba(0,0,0,0.9);
+  font-style: italic;
+}
+.b-subscription__btn {
+  position: relative;
+  float: right;
+  right: 0;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  height: 50px;
+  width: 100px;
+  -webkit-border-radius: 0 10px 10px 0;
+  border-radius: 0 10px 10px 0;
+  background: #00afef;
+  text-transform: uppercase;
+  font: 1em 'roboto-bold';
+}
+.b-about {
+  width: 100%;
+  background: #000;
+  color: #fff;
+}
+.b-about__row {
+  margin: 0;
+  padding: 10px;
+}
+.b-about__h4 {
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+}
+.b-about__hr {
+  background-color: #fff;
+  height: 1px;
+  width: 60px;
+  margin: 5px auto;
+}
+.b-address i {
+  padding: 5px;
+}
+.b-tweets__p {
+  padding: 5px;
+}
+.b-tweets__p:before {
+  content: '\f099';
+  font-family: FontAwesome;
+  color: #fff;
+  padding: 5px;
+}
+.b-tweets__p a {
+  color: #00afef;
+}
+.b-tweets__p a:hover {
+  color: #00afef;
+}
+.footer {
+  width: 100%;
+  background: #171717;
+}
+.b-footer {
+  color: #fff;
+  text-align: left;
+}
+.b-copyright {
+  padding: 15px;
+}
+.b-copyright i {
+  padding: 5px;
+}
+.b-cards__img {
+  float: right;
+  margin: 10px;
+}
+.b-cards__img:after {
+  clear: both;
 }

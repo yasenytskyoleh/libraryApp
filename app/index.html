@@ -11,15 +11,15 @@
   </head>
   <body>
     <div class="controller" ng-controller="libraryCtrl">
-      <section class="b-home container"><a name="home"></a>
+      <section class="b-home container" id="home">
         <div class="row">
-          <div class="header b-header col-xs-12 col-sm-12">
+          <div class="header b-header col-xs-12">
             <div class="container">
               <div class="row">
                 <div class="b-logo col-xs-12 col-sm-4"><a class="b-logo__a" href="index.html"><img class="b-logo__img img-responsive" src="images/logo.png" alt="online library"></a></div>
                 <div class="b-menu col-sm-8">
                   <div class="nav dropdown">
-                    <div class="b-nav-menu__list dropdown-content"><a class="b-nav-menu__item" href="#home">home</a><a class="b-nav-menu__item" href="#library">library</a><a class="b-nav-menu__item" href="#ourBlog">our blog</a><a class="b-nav-menu__item" href="#aboutUS">about us</a><a class="b-nav-menu__item" href="#contact">contact us</a>
+                    <div class="b-nav-menu__list dropdown-content"><a class="b-nav-menu__item" href="#home">home</a><a class="b-nav-menu__item" href="#library">library</a><a class="b-nav-menu__item" href="#guide">guide</a>
                     </div>
                   </div>
                 </div>
@@ -45,23 +45,22 @@
             <div class="item"></div>
           </div>
         </div>
-      </section><a name="library"></a>
-      <section>
+      </section>
+      <section id="library">
         <ng-include src="'views/table.html'" ng-show="currentView == 'table'"></ng-include>
         <ng-include src="'views/edit.html'" ng-show="currentView == 'edit'"></ng-include>
         <ng-include src="'views/books.html'" ng-show="currentView == 'books'"></ng-include>
         <ng-include src="'views/editBook.html'" ng-show="currentView == 'editBook'"></ng-include>
         <ng-include src="'views/search.html'" ng-show="currentView == 'search'"></ng-include>
       </section>
-      <section class="b-guide">
-        <div class="container">
-          <h2 class="b-guide__h2">online library guide</h2>
+      <section class="b-guide container" id="guide">
+        <h2 class="b-guide__h2">online library guide
           <hr class="b-guide__hr">
           <hr class="b-guide__hr">
           <h4 class="b-guide__h4">Online library guide is the biggest books library in the world that has alot of the popular books presented here. Top Authors are here just subscribe your email address and get updated with us.</h4>
           <div class="row">
             <div class="b-cards">
-              <div class="b-gift col-xs-6 col-md-3">
+              <div class="b-gift-card col-xs-6 col-md-3">
                 <div class="b-card">
                   <div class="b-card__icon"><i class="fa fa-gift"></i></div>
                   <h3 class="b-card__h3">Free Gift Wrap</h3>
@@ -99,7 +98,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </h2>
       </section>
       <div class="b-counts">
         <div class="b-counts-row row">
@@ -112,6 +111,80 @@
         </div>
       </div>
     </div>
+    <section class="b-gift">
+      <div class="container">
+        <div class="row">
+          <div class="b-gift-card col-xs-12">
+            <h2 class="b-gift-card__h2">book library gift card</h2>
+            <hr class="b-gift-card__hr">
+            <hr class="b-gift-card__hr">
+          </div>
+        </div>
+        <div class="b-info">
+          <div class="col-sm-12 col-md-6">
+            <div class="b-info-text">
+              <h3 class="b-info-text__h3">any occasion<i class="fa fa-gift"></i></h3>
+              <p class="b-info-text__p">The great philosopher Blaise Pascal believed that human misfortune was the result of other people’s inability “to sit quietly in one’s room”</p>
+            </div>
+            <div class="b-info-text">
+              <h3 class="b-info-text__h3">special occasion<i class="fa fa-graduation-cap"></i></h3>
+              <p class="b-info-text__p">Here are many special occasions in the lives of our friends, family and colleagues, and each offers an opportunity to commemorate the day with a unique and personalised book.</p>
+            </div>
+            <div class="b-info-text">
+              <h3 class="b-info-text__h3">card for kids<i class="fa fa-smile-o"></i></h3>
+              <p class="b-info-text__p">The thrill of double war. The excitement of shouting "Gin!" Every kid knows at least a handful of card classics, and every grown up kid remembers the fun of playing them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="b-subscribe" id="subscribe">
+      <div class="b-letter container">
+        <div class="row">
+          <h2 class="b-letter__h2">SUBSCRIBE TO OUR NEWSLETTER FOR THE LATEST NEWS</h2>
+          <hr class="b-letter__hr">
+          <hr class="b-letter__hr">
+          <p class="b-letter__p">Update your-self right now! By filling the form below, the lastest information about a thousand books will be sent directly to your email weekly.</p>
+          <div class="b-subscription">
+            <input class="b-subscription__input" placeholder="enter your e-mail">
+            <button class="b-subscription__btn">subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="b-about" id="about">
+      <div class="container">
+        <div class="b-about__row row">
+          <div class="b-about__col col-xs-12 col-sm-6">
+            <h4 class="b-about__h4">About Us</h4>
+            <hr class="b-about__hr">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <div class="b-address">
+              <h5 class="b-address__h5"><i class="fa fa-tags"></i><span>450 fifth Avenue, 34th floor. NYC</span></h5>
+              <h5 class="b-address__h5"><i class="fa fa-phone"></i><span>(+800) 123 4567 890</span></h5>
+              <h5 class="b-address__h5"><i class="fa fa-envelope-o"></i><span>info@bookstore.com</span></h5>
+            </div>
+          </div>
+          <div class="b-about__col col-xs-12 col-sm-6">
+            <h4 class="b-about__h4">Latest tweets</h4>
+            <hr class="b-about__hr">
+            <div class="b-tweets">
+              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer" id="footer">
+      <div class="container">
+        <div class="b-footer row">
+          <div class="b-copyright col-xs-12 col-sm-6"><i class="fa fa-copyright"></i><span class="b-copyright__span">2017 Online library. All rights reserved</span></div>
+          <div class="b-cards col-xs-12 col-sm-6"><img class="b-cards__img img img-responsive" src="images/cards.png"></div>
+        </div>
+      </div>
+    </section>
     <script src="vendors/js/angular.js"></script>
     <script src="vendors/js/jquery-3.1.1.min.js"></script>
     <script src="vendors/js/bootstrap.min.js"></script>

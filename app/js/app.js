@@ -44,7 +44,6 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
             $scope.countPages($scope.authors.length)
             $scope.countBook = 0;
             for(var i = 0; i <$scope.authors.length; i++){
-                console.log($scope.authors[i].books);
                 if($scope.authors[i].books != undefined){
                     for(var j =0; j < $scope.authors[i].books.length; j++){
                         $scope.countBook ++;
@@ -61,7 +60,7 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
 
                 var e_height = $('.b-counts').outerHeight();
 
-                if(w_top + 50 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
+                if(w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
                     counterNumber($scope.authors.length, $('.startNum:eq(0)'));
                     counterNumber($scope.countBook, $('.startNum:eq(1)'));
 

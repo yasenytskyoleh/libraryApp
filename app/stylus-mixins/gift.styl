@@ -1,0 +1,48 @@
+.b-gift
+  width 100%
+  background url("../images/laptop.png") no-repeat
+  background-position right bottom
+  background-size 50% auto
+  overflow hidden
+  background-color $brand_gray
+
+@media all and (max-width 991px)
+  .b-gift
+    background $brand_gray
+
+.b-gift-card
+  text-align center
+  &__h2
+    text-transform uppercase
+  &__hr
+    background-color $brand_lightBlue
+    height 1px
+    width 60px
+    margin 5px auto
+
+.b-info
+  margin 0
+  padding 0
+
+.b-info-text
+  border 1px solid $brand_border_gray
+  border-radius 5px
+  margin 15px 0
+  position relative
+  &:hover
+    background-color $brand_lightBlue
+    & h3
+      background-color $brand_white
+      & i
+        color $brand_lightBlue
+    & p
+      color $brand_black
+  &__h3
+    margin 0
+    text-transform capitalize
+    i
+      float left
+      color $brand_black
+      padding 8px 15px
+  &__p
+    padding 10px

@@ -1,9 +1,11 @@
 //carousel
 $('#slider').carousel();
 // blocks height
+setEqualHeight($(".b-card"));
 $( window ).resize(function() {
     setEqualHeight($(".b-card"));
 });
+
 // easing for animate counter
 $.extend($.easing, {
     // This is ripped directly from the jQuery easing plugin (easeOutExpo), from: http://gsgd.co.uk/sandbox/jquery/easing/
