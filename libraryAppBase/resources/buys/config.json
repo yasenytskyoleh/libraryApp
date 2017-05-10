@@ -25,28 +25,28 @@
 			"id": "patronymic",
 			"order": 2
 		},
-		"birthdate": {
-			"name": "birthdate",
+		"bookName": {
+			"name": "bookName",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "birthdate",
+			"id": "bookName",
 			"order": 3
 		},
-		"deathdate": {
-			"name": "deathdate",
+		"genre": {
+			"name": "genre",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "deathdate",
+			"id": "genre",
 			"order": 4
 		},
-		"books": {
-			"name": "books",
-			"type": "array",
-			"typeLabel": "array",
+		"numberPages": {
+			"name": "numberPages",
+			"type": "string",
+			"typeLabel": "string",
 			"required": false,
-			"id": "books",
+			"id": "numberPages",
 			"order": 5
 		}
 	}

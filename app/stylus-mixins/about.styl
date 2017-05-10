@@ -31,3 +31,14 @@
       color $brand_lightBlue
       &:hover
         color $brand_lightBlue
+
+.b-top
+  text-align center
+  &__arrow
+    font-size 42px
+    color $brand_white
+    animation change 3s infinite alternate
+
+@keyframes change{
+    to {color: $brand_lightBlue}
+}

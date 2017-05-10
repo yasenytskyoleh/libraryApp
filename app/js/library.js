@@ -1,5 +1,6 @@
 //carousel
 $('#slider').carousel();
+
 // blocks height
 setEqualHeight($(".b-card"));
 $( window ).resize(function() {
@@ -39,3 +40,4 @@ function setEqualHeight(columns) {
     );
     columns.height(tallestcolumn);
 }
+

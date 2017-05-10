@@ -4,6 +4,6 @@
 * clone the repository
 * npm i
 * npm gulp -g
-* dpd "e:\libraryApp\libraryAppBase\app.dpd" --mongod "c:\Program Files\MongoDB\Server\3.4\bin\mongod"
+* dpd "e:\libraryApp\libraryAppBase\app.dpd" --mongod "path to mongod"
 * gulp dev (to run developer environment)
 * gulp build (to build project for production area)

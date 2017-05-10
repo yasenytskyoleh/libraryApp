@@ -1,13 +1,15 @@
 .b-content.container.panel-body
     h2.b-content__h2 List books {{currentAuthor.surname}} {{currentAuthor.name}} {{currentAuthor.patronymic}}
-    button.b-content__btn.btn-create(ng-click="createBook()") Add books
-    button.b-content__btn.btn-back(ng-click="back()") Back
+    .b-buttons
+        button.b-buttons__btn.btn-back(ng-click="back()") Back
+        button.b-buttons__btn.btn-create(ng-click="createBook()") Add books
     table.b-content__table.table
         thead.b-table__thead
             tr
                 th Book name
                 th Genre
                 th Number of pages
+                //th Buy
                 th Edit book
                 th Delete book
         tbody.b-table__tbody
@@ -15,6 +17,8 @@
                 td {{book.name}}
                 td {{book.genre}}
                 td {{book.numberPages}}
+                //td
+                    button(ng-click="buy(book, currentAuthor)") Buy
                 td
                     button
                         i.fa.fa-pencil-square-o.fa-100px(aria-hidden="true", ng-click="editBook(book)")

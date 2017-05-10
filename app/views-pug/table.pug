@@ -1,12 +1,13 @@
 .b-content.container.panel-body
     h2.b-content__h2 List of authors in online library
-    .b-edit
-        button.b-edit__btn(ng-click="editOrCreate()") Add author
+    .b-buttons
+        button.b-buttons__btn(ng-click="editOrCreate()") Add author
     table.b-table.table
         thead.b-table__thead
             tr
                 th
-                    a.b-table__sort(ng-click="sort(sortValue)") Author name
+                    a#toggle.b-table__sort(ng-click="sort(sortValue)") Author name
+                        i#arrow.b-table__i.fa.fa-arrow-down
                 th Date of birth
                 th Date of death
                 th Number of books

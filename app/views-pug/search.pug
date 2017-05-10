@@ -1,7 +1,9 @@
-div.panel-body
-    h2 List authors
-    table.table
-        thead
+.b-content.container.panel-body
+    h2.b-content__h2 List authors
+    .b-buttons
+        button.b-buttons__btn.btn-back(ng-click="back()") Back
+    table.b-table.table
+        thead.b-table__thead
             tr
                 th
                     a(ng-click="sort(sortValue)") Author name
@@ -9,10 +11,10 @@ div.panel-body
                 th Book name
                 th Genre
                 th Number of pages
-        tbody
+        tbody.b-table__tbody
             tr(ng-repeat='item in findBooks')
                 td
-                    a(ng-click= "chooseAuthor(item.id)") {{item.surname}} {{item.name}} {{item.patronymic}}
+                    a.b-table__link(ng-click= "chooseAuthor(item.id)") {{item.surname}} {{item.name}} {{item.patronymic}}
                 td {{item.birthdate | date :"dd.MM.y"}}
                 td {{item.bookName}}
                 td {{item.genre}}

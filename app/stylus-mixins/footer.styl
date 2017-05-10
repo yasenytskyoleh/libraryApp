@@ -10,10 +10,19 @@
   padding 15px
   & i
     padding 5px
-
 .b-cards
-  &__img
+  &__wrap
     float right
     margin 10px
     &:after
       clear both
+
+@media all and (max-width 767px)
+  .b-footer
+    text-align center
+  .b-cards
+    &__wrap
+      float none
+    &__img
+      display block
+      margin 0 auto

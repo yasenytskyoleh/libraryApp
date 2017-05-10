@@ -1,20 +1,20 @@
-div.panel-body
-    div.form-group
+.b-content.container.panel-body
+    .form-group
         label Surname:
         input.form-control(ng-model="currentItem.surname")
-    div.form-group
+    .form-group
         label Name:
         input.form-control(ng-model="currentItem.name")
-    div.form-group
+    .form-group
         label Patronymic:
         input.form-control(ng-model="currentItem.patronymic")
-    div.form-group
+    .form-group
         label Birth Date:
-        input.form-control(type="date" ng-model="currentItem.birthdate")
-    div.form-group
+        input#start(kendo-date-picker="", ng-model="currentItem.birthdate", k-format="'dd/MM/yyyy'", k-options="myOptions")
+    .form-group
         label Death Date:
-        input.form-control(type="date" ng-model="currentItem.deathdate")
-    div
+        input#end(kendo-date-picker="", ng-model="currentItem.deathdate", k-format="'dd/MM/yyyy'", k-options="myOptions")
+    .buttons
         button(ng-click="save(currentItem)") Save &nbsp
             i.fa.fa-floppy-o.fa-100px
         button(ng-click="cancel()") Cancel

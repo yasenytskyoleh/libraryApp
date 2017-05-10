@@ -118,6 +118,10 @@ gulp.task('vendors', function() {
     return gulp.src('app/vendors/**/*')
         .pipe(gulp.dest('dist/vendors/'))
 });
+gulp.task('views', function() {
+    return gulp.src('app/views/**/*')
+        .pipe(gulp.dest('dist/views/'))
+});
 
 gulp.task('clean:dist', function() {
     return del.sync('dist/*');
@@ -129,7 +133,7 @@ gulp.task('cache:clear', function (callback) {
 
 gulp.task('build', function (callback) {
     runSequence('clean:dist',
-        ['html', 'css', 'js', 'vendors', 'fonts', 'images'],
+        ['html', 'css', 'js', 'vendors', 'fonts', 'images', 'views'],
         callback
     )
 });

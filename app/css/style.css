@@ -79,10 +79,10 @@ button {
   text-transform: capitalize;
   font-size: 1.2em;
   text-align: center;
+  border-bottom: solid 2px rgba(0,0,0,0);
 }
 .dropdown-content a:hover {
   border-bottom: solid 2px #fff;
-  margin: 0 5px;
 }
 @media all and (max-width: 768px) {
   .b-menu,
@@ -99,7 +99,7 @@ button {
     margin: 0 auto;
   }
   .nav {
-    margin: 50px;
+    margin: 30px 50px 5px 30px;
   }
   .dropdown-content a {
     display: block;
@@ -223,7 +223,7 @@ button {
   text-transform: uppercase;
   text-align: center;
 }
-.b-edit__btn {
+.b-buttons__btn {
   float: right;
   margin-right: 60px;
 }
@@ -257,6 +257,11 @@ button {
   font: 15px 'roboto-regular', Arial, sans-serif;
   text-transform: capitalize;
   color: #000;
+  text-align: center;
+}
+.b-table__i {
+  color: #000;
+  padding: 0 5px;
 }
 .b-pages {
   width: 100%;
@@ -531,6 +536,25 @@ button {
 .b-tweets__p a:hover {
   color: #00afef;
 }
+.b-top {
+  text-align: center;
+}
+.b-top__arrow {
+  font-size: 42px;
+  color: #fff;
+  -webkit-animation: change 3s infinite alternate;
+  animation: change 3s infinite alternate;
+}
+@-webkit-keyframes change {
+  to {
+    color: #00afef;
+  }
+}
+@keyframes change {
+  to {
+    color: #00afef;
+  }
+}
 .footer {
   width: 100%;
   background: #171717;
@@ -545,10 +569,22 @@ button {
 .b-copyright i {
   padding: 5px;
 }
-.b-cards__img {
+.b-cards__wrap {
   float: right;
   margin: 10px;
 }
-.b-cards__img:after {
+.b-cards__wrap:after {
   clear: both;
+}
+@media all and (max-width: 767px) {
+  .b-footer {
+    text-align: center;
+  }
+  .b-cards__wrap {
+    float: none;
+  }
+  .b-cards__img {
+    display: block;
+    margin: 0 auto;
+  }
 }

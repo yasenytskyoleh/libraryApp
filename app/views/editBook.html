@@ -1,5 +1,5 @@
 
-<div class="panel-body">
+<div class="b-content container panel-body">
   <h2>{{currentAuthor.name}} {{currentAuthor.patronymic}} {{currentAuthor.surname}}</h2>
   <div class="form-group">
     <label>Name:</label>
@@ -13,7 +13,7 @@
     <label>Number of pages:</label>
     <input class="form-control" ng-model="book.numberPages"/>
   </div>
-  <div>
+  <div class="buttons">
     <button ng-click="saveBook(currentAuthor, book)">Save &nbsp<i class="fa fa-floppy-o fa-100px"></i></button>
     <button ng-click="cancelBook()">Cancel</button>
   </div>

@@ -1,17 +1,20 @@
--var menu = [{'url' : '#home', 'text' : 'home'}, {'url' : '#library', 'text' : 'library'},{'url' : '#guide', 'text' : 'guide'}]
 section#home.b-home.container
     .row
         .header.b-header.col-xs-12
             .container
                 .row
                     .b-logo.col-xs-12.col-sm-4
-                        a.b-logo__a(href="index.html")
+                        a.b-logo__a(ng-click="scrollTo('home')")
                             img.b-logo__img.img-responsive(src="images/logo.png", alt="online library")
                     .b-menu.col-sm-8
                         .nav.dropdown
                             .b-nav-menu__list.dropdown-content
-                                each $link in menu
-                                    a.b-nav-menu__item(href=$link.url) !{$link.text}
+                               a.b-nav-menu__item(ng-click="scrollTo('home')") home
+                               a.b-nav-menu__item(ng-click="scrollTo('library')") library
+                               a.b-nav-menu__item(ng-click="scrollTo('guide')") guide
+                               a.b-nav-menu__item(ng-click="scrollTo('gift')") gift
+                               a.b-nav-menu__item(ng-click="scrollTo('subscribe')") subscribe
+                               a.b-nav-menu__item(ng-click="scrollTo('about')") about
                 .row
                     .b-center-text
                         h1.b-center-text__h1 book library
@@ -19,8 +22,8 @@ section#home.b-home.container
                         p.b-center-text__p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.
                         .b-search.form-group
                             input.b-search__input(ng-model="string", placeholder="Enter title book", required)
-                            a(href='#library')
-                                button.b-search__btn(ng-click="search(string)",title="search")
+                            a(ng-click="scrollTo('library')")
+                                button.b-search__btn(ng-click="search(string)", title="search")
                                     i.fa.fa-search.fa-lg
     #slider.carousel.slide(data-ride="carousel")
         .carousel-inner(role="listbox")

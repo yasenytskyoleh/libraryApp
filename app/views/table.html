@@ -1,13 +1,13 @@
 
 <div class="b-content container panel-body">
   <h2 class="b-content__h2">List of authors in online library</h2>
-  <div class="b-edit">
-    <button class="b-edit__btn" ng-click="editOrCreate()">Add author</button>
+  <div class="b-buttons">
+    <button class="b-buttons__btn" ng-click="editOrCreate()">Add author</button>
   </div>
   <table class="b-table table">
     <thead class="b-table__thead">
       <tr>
-        <th><a class="b-table__sort" ng-click="sort(sortValue)">Author name</a></th>
+        <th><a class="b-table__sort" id="toggle" ng-click="sort(sortValue)">Author name<i class="b-table__i fa fa-arrow-down" id="arrow"></i></a></th>
         <th>Date of birth</th>
         <th>Date of death</th>
         <th>Number of books</th>

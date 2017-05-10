@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="vendors/css/bootstrap.css">
     <link rel="stylesheet" href="vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.common-material.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.material.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.material.mobile.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Library App</title>
   </head>
@@ -16,11 +19,10 @@
           <div class="header b-header col-xs-12">
             <div class="container">
               <div class="row">
-                <div class="b-logo col-xs-12 col-sm-4"><a class="b-logo__a" href="index.html"><img class="b-logo__img img-responsive" src="images/logo.png" alt="online library"></a></div>
+                <div class="b-logo col-xs-12 col-sm-4"><a class="b-logo__a" ng-click="scrollTo('home')"><img class="b-logo__img img-responsive" src="images/logo.png" alt="online library"></a></div>
                 <div class="b-menu col-sm-8">
                   <div class="nav dropdown">
-                    <div class="b-nav-menu__list dropdown-content"><a class="b-nav-menu__item" href="#home">home</a><a class="b-nav-menu__item" href="#library">library</a><a class="b-nav-menu__item" href="#guide">guide</a>
-                    </div>
+                    <div class="b-nav-menu__list dropdown-content"><a class="b-nav-menu__item" ng-click="scrollTo('home')">home</a><a class="b-nav-menu__item" ng-click="scrollTo('library')">library</a><a class="b-nav-menu__item" ng-click="scrollTo('guide')">guide</a><a class="b-nav-menu__item" ng-click="scrollTo('gift')">gift</a><a class="b-nav-menu__item" ng-click="scrollTo('subscribe')">subscribe</a><a class="b-nav-menu__item" ng-click="scrollTo('about')">about</a></div>
                   </div>
                 </div>
               </div>
@@ -30,7 +32,7 @@
                   <h2 class="b-center-text__h2">list of author update every day</h2>
                   <p class="b-center-text__p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.</p>
                   <div class="b-search form-group">
-                    <input class="b-search__input" ng-model="string" placeholder="Enter title book" required><a href="#library">
+                    <input class="b-search__input" ng-model="string" placeholder="Enter title book" required><a ng-click="scrollTo('library')">
                       <button class="b-search__btn" ng-click="search(string)" title="search"><i class="fa fa-search fa-lg"></i></button></a>
                   </div>
                 </div>
@@ -100,7 +102,7 @@
           </div>
         </h2>
       </section>
-      <div class="b-counts">
+      <div class="b-counts" id="counts">
         <div class="b-counts-row row">
           <div class="b-count col-xs-offset-4 col-xs-2"><span class="startNum">0</span>
             <p class="number">best authors</p>
@@ -110,84 +112,88 @@
           </div>
         </div>
       </div>
+      <section class="b-gift" id="gift">
+        <div class="container">
+          <div class="row">
+            <div class="b-gift-card col-xs-12">
+              <h2 class="b-gift-card__h2">book library gift card</h2>
+              <hr class="b-gift-card__hr">
+              <hr class="b-gift-card__hr">
+            </div>
+          </div>
+          <div class="b-info">
+            <div class="col-sm-12 col-md-6">
+              <div class="b-info-text">
+                <h3 class="b-info-text__h3">any occasion<i class="fa fa-gift"></i></h3>
+                <p class="b-info-text__p">The great philosopher Blaise Pascal believed that human misfortune was the result of other people’s inability “to sit quietly in one’s room”</p>
+              </div>
+              <div class="b-info-text">
+                <h3 class="b-info-text__h3">special occasion<i class="fa fa-graduation-cap"></i></h3>
+                <p class="b-info-text__p">Here are many special occasions in the lives of our friends, family and colleagues, and each offers an opportunity to commemorate the day with a unique and personalised book.</p>
+              </div>
+              <div class="b-info-text">
+                <h3 class="b-info-text__h3">card for kids<i class="fa fa-smile-o"></i></h3>
+                <p class="b-info-text__p">The thrill of double war. The excitement of shouting "Gin!" Every kid knows at least a handful of card classics, and every grown up kid remembers the fun of playing them.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="b-subscribe" id="subscribe">
+        <div class="b-letter container">
+          <div class="row">
+            <h2 class="b-letter__h2">SUBSCRIBE TO OUR NEWSLETTER FOR THE LATEST NEWS</h2>
+            <hr class="b-letter__hr">
+            <hr class="b-letter__hr">
+            <p class="b-letter__p">Update your-self right now! By filling the form below, the lastest information about a thousand books will be sent directly to your email weekly.</p>
+            <div class="b-subscription">
+              <input class="b-subscription__input" placeholder="enter your e-mail">
+              <button class="b-subscription__btn">subscribe</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="b-about" id="about">
+        <div class="container">
+          <div class="b-about__row row">
+            <div class="col-xs-12 col-sm-6">
+              <h4 class="b-about__h4">About Us</h4>
+              <hr class="b-about__hr">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="b-address">
+                <h5 class="b-address__h5"><i class="fa fa-tags"></i><span>450 fifth Avenue, 34th floor. NYC</span></h5>
+                <h5 class="b-address__h5"><i class="fa fa-phone"></i><span>(+800) 123 4567 890</span></h5>
+                <h5 class="b-address__h5"><i class="fa fa-envelope-o"></i><span>info@bookstore.com</span></h5>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h4 class="b-about__h4">Latest tweets</h4>
+              <hr class="b-about__hr">
+              <div class="b-tweets">
+                <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+                <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+                <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+              </div>
+            </div>
+            <div class="b-top col-xs-12"><a class="b-top__link" ng-click="scrollTo('home')" title="To Top"><i class="b-top__arrow fa fa-arrow-up"></i></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="footer" id="footer">
+        <div class="container">
+          <div class="b-footer row">
+            <div class="b-copyright col-xs-12 col-sm-6"><i class="fa fa-copyright"></i><span class="b-copyright__span">2017 Online library. All rights reserved</span></div>
+            <div class="b-cards col-xs-12 col-sm-6">
+              <div class="b-cards__wrap"><img class="b-cards__img img img-responsive" src="images/cards.png"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <section class="b-gift">
-      <div class="container">
-        <div class="row">
-          <div class="b-gift-card col-xs-12">
-            <h2 class="b-gift-card__h2">book library gift card</h2>
-            <hr class="b-gift-card__hr">
-            <hr class="b-gift-card__hr">
-          </div>
-        </div>
-        <div class="b-info">
-          <div class="col-sm-12 col-md-6">
-            <div class="b-info-text">
-              <h3 class="b-info-text__h3">any occasion<i class="fa fa-gift"></i></h3>
-              <p class="b-info-text__p">The great philosopher Blaise Pascal believed that human misfortune was the result of other people’s inability “to sit quietly in one’s room”</p>
-            </div>
-            <div class="b-info-text">
-              <h3 class="b-info-text__h3">special occasion<i class="fa fa-graduation-cap"></i></h3>
-              <p class="b-info-text__p">Here are many special occasions in the lives of our friends, family and colleagues, and each offers an opportunity to commemorate the day with a unique and personalised book.</p>
-            </div>
-            <div class="b-info-text">
-              <h3 class="b-info-text__h3">card for kids<i class="fa fa-smile-o"></i></h3>
-              <p class="b-info-text__p">The thrill of double war. The excitement of shouting "Gin!" Every kid knows at least a handful of card classics, and every grown up kid remembers the fun of playing them.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="b-subscribe" id="subscribe">
-      <div class="b-letter container">
-        <div class="row">
-          <h2 class="b-letter__h2">SUBSCRIBE TO OUR NEWSLETTER FOR THE LATEST NEWS</h2>
-          <hr class="b-letter__hr">
-          <hr class="b-letter__hr">
-          <p class="b-letter__p">Update your-self right now! By filling the form below, the lastest information about a thousand books will be sent directly to your email weekly.</p>
-          <div class="b-subscription">
-            <input class="b-subscription__input" placeholder="enter your e-mail">
-            <button class="b-subscription__btn">subscribe</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="b-about" id="about">
-      <div class="container">
-        <div class="b-about__row row">
-          <div class="b-about__col col-xs-12 col-sm-6">
-            <h4 class="b-about__h4">About Us</h4>
-            <hr class="b-about__hr">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            <div class="b-address">
-              <h5 class="b-address__h5"><i class="fa fa-tags"></i><span>450 fifth Avenue, 34th floor. NYC</span></h5>
-              <h5 class="b-address__h5"><i class="fa fa-phone"></i><span>(+800) 123 4567 890</span></h5>
-              <h5 class="b-address__h5"><i class="fa fa-envelope-o"></i><span>info@bookstore.com</span></h5>
-            </div>
-          </div>
-          <div class="b-about__col col-xs-12 col-sm-6">
-            <h4 class="b-about__h4">Latest tweets</h4>
-            <hr class="b-about__hr">
-            <div class="b-tweets">
-              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
-              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
-              <p class="b-tweets__p">There are some amazing submissions in the latest &nbsp<a class="b-tweets" href="#">@tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="footer" id="footer">
-      <div class="container">
-        <div class="b-footer row">
-          <div class="b-copyright col-xs-12 col-sm-6"><i class="fa fa-copyright"></i><span class="b-copyright__span">2017 Online library. All rights reserved</span></div>
-          <div class="b-cards col-xs-12 col-sm-6"><img class="b-cards__img img img-responsive" src="images/cards.png"></div>
-        </div>
-      </div>
-    </section>
-    <script src="vendors/js/angular.js"></script>
     <script src="vendors/js/jquery-3.1.1.min.js"></script>
     <script src="vendors/js/bootstrap.min.js"></script>
+    <script src="vendors/js/angular.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.1.118/js/kendo.all.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/library.js"></script>
   </body>

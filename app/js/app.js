@@ -1,11 +1,13 @@
 /**
  * Created by Admin on 09.03.2017.
  */
-var module = angular.module("libraryApp",[]);
+var module = angular.module("libraryApp", [ "kendo.directives" ]);
 module.constant("url","http://localhost:2403/authors/");
+//module.constant("buys", "http://localhost:2403/buys/")
 var min = 0,
     max = 9,
-    n = 8;
+    n = 8,
+    show = false;
 
 generateId = function (min,n, max){
     var id = " ";
@@ -19,21 +21,37 @@ generateNumber = function(min, max){
 }
 
 
-module.controller('libraryCtrl', function ($scope, $http, url) {
+module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScroll, url ) {
+    //datepicker options
+    $scope.date = new Date();
+    $scope.date.setDate($scope.date.getDate() - 200000);
+    $scope.myOptions = {
+        min: $scope.date
+    }
+
     //limit
-    $scope.limitValue = 2;
+    $scope.limitValue = 5;
     //sort filter author
     $scope.sortValue = "surname";
     $scope.sort = function(val){
       if(val == "surname"){
           $scope.sortValue = "-surname";
+          $("#arrow").removeClass("fa-arrow-down").addClass( "fa-arrow-up");
           $scope.refresh();
       }
       else {
           $scope.sortValue = "surname";
+          $("#arrow").removeClass("fa-arrow-up").addClass("fa-arrow-down");
           $scope.refresh();
       }
     };
+    //scroll
+    $scope.scrollTo = function(id) {
+        var old = $location.hash();
+        $location.hash(id);
+        $anchorScroll();
+        $location.hash(old);
+    }
 
     //init view
     $scope.currentView = 'table';
@@ -41,7 +59,7 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
     $scope.refresh = function () {
         $http.get(url).success(function (data) {
             $scope.authors = data;
-            $scope.countPages($scope.authors.length)
+            $scope.countPages($scope.authors.length);
             $scope.countBook = 0;
             for(var i = 0; i <$scope.authors.length; i++){
                 if($scope.authors[i].books != undefined){
@@ -50,23 +68,22 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
                     }
                 }
             }
-            $(window).on("scroll load resize", function(){
 
-                var w_top = $(window).scrollTop();        // Количество пикселей на которое была прокручена страница
-                var e_top = $('.b-counts').offset().top;     // Расстояние от блока со счетчиками до верха всего документа
+            $(window).on("scroll load", function(){
+                var w_top = $(window).scrollTop();
+                var e_top = $('#counts').offset().top;
 
-                var w_height = $(window).height();        // Высота окна браузера
-                var d_height = $(document).height();      // Высота всего документа
-
-                var e_height = $('.b-counts').outerHeight();
-
-                if(w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
+                if(w_top + 850 >= e_top && show!= true){
                     counterNumber($scope.authors.length, $('.startNum:eq(0)'));
                     counterNumber($scope.countBook, $('.startNum:eq(1)'));
+                    show = true;
 
                 }
             });
         });
+        /*$http.get(buys).success(function (data) {
+            $scope.buys = data;
+        });*/
     };
 
     // edit or create items -> edit
@@ -103,6 +120,7 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
         $http.post(url, item).success(function (item) {
             $scope.authors.push(item);
             $scope.currentView = "table";
+            show = false;
         });
     };
 
@@ -179,6 +197,7 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
                 }
             }
             $scope.currentView = "books";
+            show = false;
             $scope.refresh();
         });
     }
@@ -265,10 +284,20 @@ module.controller('libraryCtrl', function ($scope, $http, url) {
     //current page
     $scope.currentPage = function (x) {
         $scope.count = (x-1)*$scope.limitValue;
-        console.log($scope.count);
         $scope.refresh();
     }
-
+    //buy
+/*    $scope.buy = function (x, y) {
+        var obj = {};
+        obj.name = y.name;
+        obj.surname = y.surname;
+        obj.patronymic = y.patronymic;
+        obj.bookName = x.name;
+        obj.genre = x.genre;
+        $http.post(buys, obj).success(function (obj) {
+            $scope.buys.push(obj);
+        });
+    }*/
     $scope.refresh();
 })
 //filter for pages
@@ -287,3 +316,4 @@ module.filter('startNumber', function () {
     }
 
 });
+
