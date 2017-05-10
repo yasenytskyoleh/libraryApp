@@ -1,0 +1,44 @@
+.b-about
+  width 100%
+  background $brand_black
+  color $brand_white
+  &__row
+    margin 0
+    padding 10px
+  &__h4
+    text-align center
+    text-transform capitalize
+    color $brand_white
+  &__hr
+    background-color $brand_white
+    height 1px
+    width 60px
+    margin 5px auto
+
+.b-address
+  & i
+    padding 5px
+
+.b-tweets
+  &__p
+    padding 5px
+    &:before
+      content '\f099'
+      font-family FontAwesome
+      color $brand_white
+      padding 5px
+    & a
+      color $brand_lightBlue
+      &:hover
+        color $brand_lightBlue
+
+.b-top
+  text-align center
+  &__arrow
+    font-size 42px
+    color $brand_white
+    animation change 3s infinite alternate
+
+@keyframes change{
+    to {color: $brand_lightBlue}
+}

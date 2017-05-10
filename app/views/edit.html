@@ -1,0 +1,27 @@
+
+<div class="b-content container panel-body">
+  <div class="form-group">
+    <label>Surname:</label>
+    <input class="form-control" ng-model="currentItem.surname"/>
+  </div>
+  <div class="form-group">
+    <label>Name:</label>
+    <input class="form-control" ng-model="currentItem.name"/>
+  </div>
+  <div class="form-group">
+    <label>Patronymic:</label>
+    <input class="form-control" ng-model="currentItem.patronymic"/>
+  </div>
+  <div class="form-group">
+    <label>Birth Date:</label>
+    <input id="start" kendo-date-picker="" ng-model="currentItem.birthdate" k-format="'dd/MM/yyyy'" k-options="myOptions"/>
+  </div>
+  <div class="form-group">
+    <label>Death Date:</label>
+    <input id="end" kendo-date-picker="" ng-model="currentItem.deathdate" k-format="'dd/MM/yyyy'" k-options="myOptions"/>
+  </div>
+  <div class="buttons">
+    <button ng-click="save(currentItem)">Save &nbsp<i class="fa fa-floppy-o fa-100px"></i></button>
+    <button ng-click="cancel()">Cancel</button>
+  </div>
+</div>

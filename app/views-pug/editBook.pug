@@ -1,0 +1,15 @@
+.b-content.container.panel-body
+    h2 {{currentAuthor.name}} {{currentAuthor.patronymic}} {{currentAuthor.surname}}
+    .form-group
+        label Name:
+        input.form-control(ng-model="book.name")
+    .form-group
+        label Genre:
+        input.form-control(ng-model="book.genre")
+    .form-group
+        label Number of pages:
+        input.form-control(ng-model="book.numberPages")
+    .buttons
+        button(ng-click="saveBook(currentAuthor, book)") Save &nbsp
+            i.fa.fa-floppy-o.fa-100px
+        button(ng-click="cancelBook()") Cancel

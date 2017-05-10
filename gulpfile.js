@@ -2,8 +2,7 @@ var gulp          = require('gulp'),
     pug           = require('gulp-pug2'),
     stylus        = require('gulp-stylus'),
     autoprefixer  = require('gulp-autoprefixer'),
-    coffee        = require('gulp-coffee'),
-    gutil         = require('gulp-util'),
+    util         = require('gulp-util'),
     browserSync   = require('browser-sync').create(),
     concat        = require('gulp-concat'),
     concatCss     = require('gulp-concat-css'),
@@ -21,6 +20,15 @@ gulp.task('pug', function(){
             stream: true
         }))
 });
+
+gulp.task('views', function () {
+    return gulp.src('app/views-pug/**/*.pug')
+        .pipe(pug({pretty: true}))
+        .pipe(gulp.dest('app/views/'))
+        .pipe(browserSync.reload({
+                stream: true
+            }))
+})
 
 gulp.task('stylus', function () {
     return gulp.src('app/stylus/**/*.styl')
@@ -40,22 +48,13 @@ gulp.task('autoprefixer', function() {
         .pipe(gulp.dest('app/css/'))
 });
 
-gulp.task('coffee', function() {
-    gulp.src('app/coffee/**/*.coffee')
-        .pipe(coffee({bare: true}).on('error', gutil.log))
-        .pipe(gulp.dest('app/js/'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-});
-
-gulp.task('watch', ['browserSync', 'pug', 'stylus', 'coffee','autoprefixer'],function(){
+gulp.task('watch', ['browserSync', 'pug', 'stylus', 'autoprefixer', 'views'],function(){
     gulp.watch('app/pug/**/*.pug', ['pug'])
     gulp.watch('app/pug-fragments/**/*.pug', ['pug'])
+    gulp.watch('app/views-pug/**/*.pug', ['views'])
     gulp.watch('app/stylus/**/*.styl', ['stylus'])
     gulp.watch('app/stylus-mixins/**/*.styl', ['stylus'])
     gulp.watch('app/css/**/*.css', ['autoprefixer'])
-    gulp.watch('app/coffee/**/*.coffee', ['coffee'])
     gulp.watch('app/*.html', browserSync.reload)
     gulp.watch('app/css/**/*.css', browserSync.reload)
     gulp.watch('app/js/**/*.js', browserSync.reload)
@@ -119,6 +118,10 @@ gulp.task('vendors', function() {
     return gulp.src('app/vendors/**/*')
         .pipe(gulp.dest('dist/vendors/'))
 });
+gulp.task('views', function() {
+    return gulp.src('app/views/**/*')
+        .pipe(gulp.dest('dist/views/'))
+});
 
 gulp.task('clean:dist', function() {
     return del.sync('dist/*');
@@ -130,13 +133,13 @@ gulp.task('cache:clear', function (callback) {
 
 gulp.task('build', function (callback) {
     runSequence('clean:dist',
-        ['html', 'css', 'js', 'vendors', 'fonts', 'images'],
+        ['html', 'css', 'js', 'vendors', 'fonts', 'images', 'views'],
         callback
     )
 });
 
 gulp.task('dev', function (callback) {
-    runSequence(['pug','stylus','coffee','browserSync', 'watch'],
+    runSequence(['pug','stylus','browserSync', 'watch'],
         callback
     )
 });

@@ -1,0 +1,53 @@
+.b-subscribe
+  width 100%
+  background url("../images/newsletter-bg.png") center bottom  no-repeat, $brand_lightBlue
+.b-letter
+  padding 0
+  position relative
+  & > div
+    margin 15px 0
+  &__h2
+    text-align center
+    color $brand_white
+    text-transform uppercase
+  &__hr
+    background-color $brand_white
+    height 1px
+    width 60px
+    margin 5px auto
+  &__p
+    width 85%
+    margin 20px auto
+    color $brand_black
+    text-align center
+
+.b-subscription
+  margin 20px auto
+  width 430px
+  height 50px
+  background $brand_white
+  border-radius 10px
+  &__input
+    width 330px
+    height 20px
+    padding 25px 10px
+    float left
+    border 0
+    outline 0
+    background rgba(0,0,0,0)
+    &::placeholder
+      color rgba(0,0,0,.9)
+      font-style italic
+  &__btn
+    position relative
+    float right
+    right 0
+    cursor pointer
+    border 0
+    outline 0
+    height 50px
+    width 100px
+    border-radius: 0 10px 10px 0
+    background $brand_lightBlue
+    text-transform uppercase
+    font 1em 'roboto-bold'

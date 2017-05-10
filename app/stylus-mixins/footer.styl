@@ -1,0 +1,28 @@
+.footer
+  width 100%
+  background $brand_footer
+
+.b-footer
+  color $brand_white
+  text-align left
+
+.b-copyright
+  padding 15px
+  & i
+    padding 5px
+.b-cards
+  &__wrap
+    float right
+    margin 10px
+    &:after
+      clear both
+
+@media all and (max-width 767px)
+  .b-footer
+    text-align center
+  .b-cards
+    &__wrap
+      float none
+    &__img
+      display block
+      margin 0 auto

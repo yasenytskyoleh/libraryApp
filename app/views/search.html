@@ -1,0 +1,27 @@
+
+<div class="b-content container panel-body">
+  <h2 class="b-content__h2">List authors</h2>
+  <div class="b-buttons">
+    <button class="b-buttons__btn btn-back" ng-click="back()">Back</button>
+  </div>
+  <table class="b-table table">
+    <thead class="b-table__thead">
+      <tr>
+        <th><a ng-click="sort(sortValue)">Author name</a></th>
+        <th>BirthDate</th>
+        <th>Book name</th>
+        <th>Genre</th>
+        <th>Number of pages</th>
+      </tr>
+    </thead>
+    <tbody class="b-table__tbody">
+      <tr ng-repeat="item in findBooks">
+        <td><a class="b-table__link" ng-click="chooseAuthor(item.id)">{{item.surname}} {{item.name}} {{item.patronymic}}</a></td>
+        <td>{{item.birthdate | date :"dd.MM.y"}}</td>
+        <td>{{item.bookName}}</td>
+        <td>{{item.genre}}</td>
+        <td>{{item.numberPages}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

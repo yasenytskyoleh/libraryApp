@@ -1,0 +1,32 @@
+.b-content.container.panel-body
+    h2.b-content__h2 List of authors in online library
+    .b-buttons
+        button.b-buttons__btn(ng-click="editOrCreate()") Add author
+    table.b-table.table
+        thead.b-table__thead
+            tr
+                th
+                    a#toggle.b-table__sort(ng-click="sort(sortValue)") Author name
+                        i#arrow.b-table__i.fa.fa-arrow-down
+                th Date of birth
+                th Date of death
+                th Number of books
+                th Edit
+                th Delete
+        tbody.b-table__tbody
+            tr(ng-repeat='item in authors | orderBy: sortValue | startNumber: count | limitTo: limitValue ' )
+                td
+                    a.b-table__link(ng-click="allBooks(item)") {{item.surname}} {{item.name}} {{item.patronymic}}
+                td {{item.birthdate | date :"dd.MM.y"}}
+                td {{item.deathdate | date :"dd.MM.y"}}
+                td {{item.books.length}}
+                td
+                    button
+                        i.fa.fa-pencil-square-o.fa-100px(aria-hidden="true", ng-click="editOrCreate(item)")
+                td
+                    button
+                        i.fa.fa-times.fa-100px(ng-click="delete(item)")
+    .b-pages
+        ul.b-pages__ul
+            li.b-pages__li(ng-repeat='page in pages')
+                a.b-pages__a(ng-click="currentPage(page)") {{page}}

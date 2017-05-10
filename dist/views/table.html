@@ -1,0 +1,38 @@
+
+<div class="b-content container panel-body">
+  <h2 class="b-content__h2">List of authors in online library</h2>
+  <div class="b-buttons">
+    <button class="b-buttons__btn" ng-click="editOrCreate()">Add author</button>
+  </div>
+  <table class="b-table table">
+    <thead class="b-table__thead">
+      <tr>
+        <th><a class="b-table__sort" id="toggle" ng-click="sort(sortValue)">Author name<i class="b-table__i fa fa-arrow-down" id="arrow"></i></a></th>
+        <th>Date of birth</th>
+        <th>Date of death</th>
+        <th>Number of books</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody class="b-table__tbody">
+      <tr ng-repeat="item in authors | orderBy: sortValue | startNumber: count | limitTo: limitValue ">
+        <td><a class="b-table__link" ng-click="allBooks(item)">{{item.surname}} {{item.name}} {{item.patronymic}}</a></td>
+        <td>{{item.birthdate | date :"dd.MM.y"}}</td>
+        <td>{{item.deathdate | date :"dd.MM.y"}}</td>
+        <td>{{item.books.length}}</td>
+        <td>
+          <button><i class="fa fa-pencil-square-o fa-100px" aria-hidden="true" ng-click="editOrCreate(item)"></i></button>
+        </td>
+        <td>
+          <button><i class="fa fa-times fa-100px" ng-click="delete(item)"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="b-pages">
+    <ul class="b-pages__ul">
+      <li class="b-pages__li" ng-repeat="page in pages"><a class="b-pages__a" ng-click="currentPage(page)">{{page}}</a></li>
+    </ul>
+  </div>
+</div>
