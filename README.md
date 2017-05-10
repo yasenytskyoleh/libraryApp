@@ -1,4 +1,4 @@
-# libraryApp project version 1.1.0
+# libraryApp project version 1.2.0
 ## This project can be used to create a frontend.
 ## How to install?
 * clone the repository
