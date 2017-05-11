@@ -122,6 +122,7 @@ module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScro
             $scope.currentView = "table";
             show = false;
         });
+        $scope.refresh();
     };
 
     //cancel
@@ -138,6 +139,7 @@ module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScro
         }).success(function () {
             $scope.authors.splice($scope.authors.indexOf(item), 1);
         });
+        $scope.refresh();
     }
     //-----------------------------------  BOOKS
     //all books
@@ -279,7 +281,8 @@ module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScro
         for (var i = 0; i < x; i+=$scope.limitValue){
             $scope.pages.push(step);
             step++;
-        }
+        };
+        $scope.refresh();
     };
     //current page
     $scope.currentPage = function (x) {

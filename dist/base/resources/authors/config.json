@@ -29,7 +29,7 @@
 			"name": "birthdate",
 			"type": "string",
 			"typeLabel": "string",
-			"required": false,
+			"required": true,
 			"id": "birthdate",
 			"order": 3
 		},
