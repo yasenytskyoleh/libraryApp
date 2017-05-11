@@ -3,7 +3,7 @@
  */
 var module = angular.module("libraryApp", [ "kendo.directives" ]);
 module.constant("url","http://localhost:2403/authors/");
-module.constant("buys", "http://localhost:2403/buys/")
+//module.constant("buys", "http://localhost:2403/buys/")
 var min = 0,
     max = 9,
     n = 8,
@@ -21,7 +21,7 @@ generateNumber = function(min, max){
 }
 
 
-module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScroll, url, buys ) {
+module.controller('libraryCtrl', function ($scope, $http, $location, $anchorScroll, url ) {
     //datepicker options
     $scope.date = new Date();
     $scope.date.setDate($scope.date.getDate() - 200000);
