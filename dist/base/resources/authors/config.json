@@ -1,0 +1,53 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"surname": {
+			"name": "surname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "surname",
+			"order": 1
+		},
+		"patronymic": {
+			"name": "patronymic",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "patronymic",
+			"order": 2
+		},
+		"birthdate": {
+			"name": "birthdate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "birthdate",
+			"order": 3
+		},
+		"deathdate": {
+			"name": "deathdate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "deathdate",
+			"order": 4
+		},
+		"books": {
+			"name": "books",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "books",
+			"order": 5
+		}
+	}
+}
